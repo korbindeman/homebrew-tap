@@ -1,16 +1,23 @@
 class Enki < Formula
   desc "Multi-agent coding orchestrator"
   homepage "https://github.com/korbindeman/enki"
-  url "https://github.com/korbindeman/enki/archive/refs/tags/v2026.03.06.tar.gz"
   version "2026.03.06"
-  sha256 "31a901df72843dcf5bade894432d09058d4b6a3ce4f195298ca91b358a521bb1"
   license "MIT"
 
-  depends_on "rust" => :build
-  depends_on "git"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/korbindeman/enki/releases/download/v2026.03.06/enki-aarch64-apple-darwin.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    else
+      url "https://github.com/korbindeman/enki/releases/download/v2026.03.06/enki-x86_64-apple-darwin.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    end
+  end
+
+  depends_on :macos
 
   def install
-    system "cargo", "install", "--path", "crates/cli", "--root", prefix
+    bin.install "enki"
   end
 
   test do
