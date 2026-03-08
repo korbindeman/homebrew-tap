@@ -1,9 +1,9 @@
 class Enki < Formula
   desc "Multi-agent coding orchestrator"
   homepage "https://github.com/korbindeman/enki"
-  url "https://github.com/korbindeman/enki/releases/download/v2026.03.06.3/enki-aarch64-apple-darwin.tar.gz"
-  version "2026.03.06.3"
-  sha256 "44d4433bc846b24a381029da2f21a3aa59c5cc59bc2ddf1414f467cd136f9048"
+  url "https://github.com/korbindeman/enki/releases/download/v2026.03.08/enki-aarch64-apple-darwin.tar.gz"
+  version "2026.03.08"
+  sha256 "073ec7f1cd23b6b8a8e39b14f8e7ee50fc46d0de6aed8be6b1390651aa5ae0ce"
   license "MIT"
 
   depends_on arch: :arm64
